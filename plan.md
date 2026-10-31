@@ -165,3 +165,21 @@ The migration preserves the existing API and database, one-time browser-prototyp
 Focused browser regressions cover one-time prototype import, initialization failure, overlapping note saves and unsaved-edit protection, and failed practice/review save recovery. The existing Chromium/WebKit journey, accessibility, narrow-layout, passage, and generated-material checks continue to cover the full workflow.
 
 Verification passed: lint, type checking, six extraction/workflow/API tests, sixteen Chromium/WebKit browser tests, and the production build. See `docs/verification.md` for the migration evidence and remaining manual accessibility limits.
+
+
+## Planned follow-on: whole-book discovery through subscription chat — 31 October 2026
+
+**Status: planned, not implemented.** The next proposed workflow is **Export whole book → discover ideas → import discoveries → generate study material**. The learner chooses the book; the app handles source organization and any necessary batching. The learner must not have to identify valuable chapters or passages before analysis.
+
+Both discovery and material generation happen in the learner's existing Gemini or Claude chat, through explicit file upload and response import. Commonplace prepares the instructions, validates returned sources, and stores accepted material locally. This mode does not require n8n configuration or API credentials. The existing optional n8n workflow remains available.
+
+The detailed implementation plan, contracts, recovery rules, delivery stages, and acceptance criteria are in [docs/subscription-study-plan.md](docs/subscription-study-plan.md). Key decisions:
+
+- Export all available extracted text with stable source markers. Whole-book scope is the default; automated fallback batches cover the same book without asking the learner to select sections.
+- Separate discovery from teaching material. Collect source-backed candidates first, synthesize/rank them across the book, then prepare practice and recall drafts from their original context.
+- Track exported text, model-reported coverage, validated discoveries, and accepted material separately. Neither an upload nor a model's coverage report proves exhaustive understanding.
+- Use two chat round trips when the whole-book result fits: discovery/ranking, then study generation. Large or incomplete responses require automatically prepared continuation packs; batched discovery also requires a book-wide synthesis pass.
+- Reuse source checking, the material schema, the draft editor, and the existing acceptance/Practice/Review flow. Preserve quotations, attribution, notes, and progress through additive migrations and idempotent imports.
+- Keep freshness research, OCR, image analysis, embeddings, chat automation, and new providers outside this change. Article-length PDF/EPUB files work through the same flow; URL/article ingestion is a separate feature.
+
+Build in five checkpoints: source manifests and export; discovery import and coverage; whole-book synthesis; material generation/import and acceptance; end-to-end verification and documentation. No implementation or live book upload is part of this planning change.
