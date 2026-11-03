@@ -9,3 +9,6 @@ test-results/
 
 .env.local
 .env.*.local
+
+# Local design verification captures
+.impeccable/review/

@@ -183,3 +183,9 @@ The detailed implementation plan, contracts, recovery rules, delivery stages, an
 - Keep freshness research, OCR, image analysis, embeddings, chat automation, and new providers outside this change. Article-length PDF/EPUB files work through the same flow; URL/article ingestion is a separate feature.
 
 Build in five checkpoints: source manifests and export; discovery import and coverage; whole-book synthesis; material generation/import and acceptance; end-to-end verification and documentation. No implementation or live book upload is part of this planning change.
+
+## Three-destination layout preview — 31 October 2026
+
+The learner requested distinct Library, AI Workspace, and Study screens and confirmed that challenges are applied problems. A clickable design preview is now available at `/design`, documented in [docs/layout-preview.md](docs/layout-preview.md). It preserves the existing visual identity and uses authored sample data with in-memory interaction only. The production study interface remains at `/`.
+
+The preview separates book management from AI response review, then connects passage reading to an applied challenge and recall practice. It demonstrates sample file/paste import validation, source inspection, acceptance, feedback, and keyboard-focus behavior. It does not implement the planned whole-book subscription exchange or Apple Books integration. After layout feedback, use these three destinations when implementing the subscription plan rather than putting its entire interface inside the existing book detail panel.

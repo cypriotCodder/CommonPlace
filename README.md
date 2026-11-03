@@ -10,6 +10,12 @@ Use Node.js **22.13 or newer** and npm. Run `npm install`, then `npm run dev`, a
 
 Tests use authored small PDF/EPUB fixtures, temporary databases, and separate local servers and compilation directories. They do not write to your study database. Browser coverage includes keyboard actions, save-error recovery, exact passage persistence, automated accessibility scans, reduced motion, and layouts down to 320 CSS pixels. See [the verification record](docs/verification.md) for evidence and testing limits.
 
+## Layout preview
+
+With the app running normally, try **Library → AI Workspace → Study** in [A / Desk](http://127.0.0.1:3000/design) or [B / Folio](http://127.0.0.1:3000/design/folio). Each preview links to the other. Desk uses a navigation rail and compact rows; Folio uses a top masthead, book shelf, and centered study page. See the [Folio guide](docs/layout-folio.md) for its composition and tradeoffs. The current application remains at `/`.
+
+The preview uses authored sample books and ideas. Search, filters, book selection, sample JSON validation and acceptance, applied challenges, recall, and per-idea notes work in browser memory; reloading clears changes. Upload controls simulate the layout, and exports contain only sample text. The preview does not access your library or implement the planned whole-book subscription-chat exchange or Apple Books integration. See [the layout preview guide](docs/layout-preview.md) for the walkthrough and limits.
+
 ## Books and passages
 
 Open **Books** to import a text-based PDF or EPUB of up to **25 MB**. You may enter a title and author or use available embedded metadata, then correct the details after extraction. Import progress and failures appear in the library. Keep the local server running until extraction finishes; interrupted imports are marked failed on the next library load, and can be deleted and re-imported. Identical files are detected rather than stored twice.

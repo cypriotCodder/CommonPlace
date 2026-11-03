@@ -118,3 +118,7 @@ Muted supporting text uses `#59685e`; former low-contrast metadata shades now us
 ## AI book learning
 
 Place the optional learning workflow within the selected book, after the manual search/selection tools. Keep the same flat surfaces and fine rules. Show connection state, named text recipients, estimated call count, and bounded progress before generation. Larger books pause at a clear checkpoint. Drafts show the exact quotation and attribution beside the educational rationale, with editable questions and answers under a disclosure. Accepting material is explicit; source-based generation does not imply current-source verification. Accepted book practice sits in the Practice view; attributed recall cards join the shared Review queue. The original indexing activity progress remains labeled as such.
+
+## Three-destination layout preview
+
+The `/design` route explores Library, AI Workspace, and Study within this existing visual identity: shared paper/ink/green tokens, DM Serif Display and DM Sans roles, fine rules, flat surfaces, and a 225px desktop navigation rail. It uses authored SVG icons and typographic sample book identifiers. This is a separate, temporary-data preview; the current app remains at `/`. Route-specific composition, interactions, and limits are documented in [the layout preview guide](docs/layout-preview.md), rather than replacing the system rules above.
